@@ -5,3 +5,7 @@ api-version: 1.18
 softdepend: [ Towny, Factions, WorldGuard ]
 authors: [ Zeke ]
 description: Asynchronous Random Teleport
+commands:
+  wild:
+    description: teleport to a random location
+    usage: /<command>
