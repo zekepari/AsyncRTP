@@ -1,0 +1,7 @@
+name: AsyncRTP
+version: '${project.version}'
+main: me.zekepari.asyncrtp.AsyncRTP
+api-version: 1.18
+softdepend: [ Towny, Factions, WorldGuard ]
+authors: [ Zeke ]
+description: Asynchronous Random Teleport
