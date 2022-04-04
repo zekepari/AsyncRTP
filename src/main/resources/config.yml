@@ -1,4 +1,5 @@
 #Welcome to AsyncRTP.
+#Set any message to "" to disable.
 #Please contact Zeke#5958 on discord for support.
 
 Messages: #Formatting guide: https://docs.adventure.kyori.net/minimessage/
@@ -11,6 +12,9 @@ CommandRTP: #/wild
   DisabledWorlds: #The command won't work in these worlds.
     - "world_nether"
     - "world_the_end"
+  Messages:
+    World: "<red>This command cannot be used in this world"
+    Cooldown: "<red>Please wait <second>s before using this command again"
 
 RespawnRTP:
   Enabled: true

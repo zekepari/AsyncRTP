@@ -1,5 +1,7 @@
 package me.zekepari.asyncrtp.Commands;
 
+import me.zekepari.asyncrtp.AsyncRTP;
+import me.zekepari.asyncrtp.Utilities.MessageService;
 import me.zekepari.asyncrtp.Utilities.Teleporter;
 import org.bukkit.World;
 import org.bukkit.command.Command;
@@ -20,9 +22,11 @@ public class Wild implements CommandExecutor {
         if (sender instanceof Player) {
             Player player = (((Player) sender).getPlayer());
             if (disabledWorlds.contains(player.getWorld())) {
+                MessageService.sendMessage(player, AsyncRTP.getAsyncRTP().getConfig().getString("CommandRTP.Messages.World"));
                 return true;
             }
             if (onCooldown.containsKey(player)) {
+                MessageService.sendMessage(player, AsyncRTP.getAsyncRTP().getConfig().getString("CommandRTP.Messages.Cooldown"));
                 return true;
             }
             onCooldown.put(player, Instant.now().getEpochSecond());
