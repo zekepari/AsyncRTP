@@ -19,7 +19,7 @@ CommandRTP: #/wild
 RespawnRTP:
   Enabled: true
   CheckForBed: true #Should AsyncRTP respawn the player at their bed if they have one?
-  RespawnWorld: "world" #Put "" to respawn in the world they died in.
+  RespawnWorld: "world" #Put "" to RTP players in the world they died in.
 
 NewPlayerRTP:
   Enabled: true

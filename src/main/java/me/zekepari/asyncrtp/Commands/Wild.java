@@ -21,16 +21,19 @@ public class Wild implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player) {
             Player player = (((Player) sender).getPlayer());
+
             if (disabledWorlds.contains(player.getWorld())) {
                 MessageService.sendMessage(player, AsyncRTP.getAsyncRTP().getConfig().getString("CommandRTP.Messages.World"));
                 return true;
             }
+
             if (onCooldown.containsKey(player)) {
                 MessageService.sendMessage(player, AsyncRTP.getAsyncRTP().getConfig().getString("CommandRTP.Messages.Cooldown"));
                 return true;
             }
+
             onCooldown.put(player, Instant.now().getEpochSecond());
-            Teleporter.issueRTP(player);
+            Teleporter.issueRTP(player, player.getWorld());
         }
         return true;
     }
