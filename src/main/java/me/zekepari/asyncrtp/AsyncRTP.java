@@ -5,6 +5,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public final class AsyncRTP extends JavaPlugin {
 
+    private final AsyncRTP asyncRTP = this;
+
     @Override
     public void onEnable() {
         // Plugin startup logic
@@ -19,5 +21,9 @@ public final class AsyncRTP extends JavaPlugin {
     @Override
     public void onDisable() {
         // Plugin shutdown logic
+    }
+
+    public AsyncRTP getAsyncRTP() {
+        return asyncRTP;
     }
 }
