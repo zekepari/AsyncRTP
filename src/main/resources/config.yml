@@ -1,0 +1,58 @@
+#Welcome to AsyncRTP.
+#This config uses mini-message for formatting (https://docs.adventure.kyori.net/minimessage/).
+#Please contact Zeke#5958 on discord for support.
+
+Messages:
+  Random: "<green>Sending you to <blue><i><x>, <y>, <z>"
+  Bed: "<green>Sending you to your bed's spawn"
+
+WildCommand:
+  Enabled: true
+  Cooldown: 30 #Seconds (Set to 0 to disable)
+  NewPlayerOnly:
+    Enabled: false
+    Timer: 72000 #Ticks [72000 = 1 Hour]
+    #By enabling, players can only execute /wild before their total playtime surpasses the timer.
+  PermissionCheck:
+
+RespawnRTP:
+  Enabled: true
+
+Extensions:
+  Towny:
+    CheckForTownSpawn: false
+    TeleportInsideClaims: false
+    Messages:
+      TownSpawn: "<green>Sending you to your town's spawn"
+  Factions:
+    CheckForFactionSpawn: false
+    TeleportInsideClaims: false
+    Messages:
+      FactionSpawn: "<green>Sending you to your Faction's spawn"
+
+Range: #Player's will be teleported within these coordinates
+  X: 100 #West to east from (0,0)
+  Z: 100 #North to south from (0,0)
+
+SafeBlocks:
+  Enabled: true
+  MaxAttempts: 100 #Attempts AsyncRTP will take at finding a safe teleport location before cancelling.
+  Blocks:
+    - "GRASS"
+    - "DIRT"
+    - "GRASS_BLOCK"
+    - "RED_SAND"
+    - "SAND"
+    - "CLAY"
+    - "TERRACOTTA"
+    - "RED_TERRACOTTA"
+    - "ORANGE_TERRACOTTA"
+    - "COBBLESTONE"
+    - "COARSE_DIRT"
+    - "PODZOL"
+
+TeleportSound:
+  Enabled: true
+  Sound: "ENTITY_EXPERIENCE_ORB_PICKUP" #Sounds list: https://www.digminecraft.com/lists/sound_list_pc.php
+  Volume: 1
+  Pitch: 1
