@@ -5,17 +5,26 @@ Messages: #Formatting guide: https://docs.adventure.kyori.net/minimessage/
   Random: "<green>Sending you to <blue><i><x>, <y>, <z>"
   Bed: "<green>Sending you to your bed's spawn"
 
-WildCommand:
+CommandRTP: #/wild
   Enabled: true
   Cooldown: 30 #Seconds (Set to 0 to disable)
 
 RespawnRTP:
   Enabled: true
   CheckForBed: true
+  RespawnWorld: "world" #Put "" to respawn in the world they died in.
+
+NewPlayerRTP:
+  Enabled: true
+  World:
 
 Range: #Player's will be teleported within these coordinates
   X: 100 #West to east from (0,0)
   Z: 100 #North to south from (0,0)
+
+DisabledWorlds:
+  - "world_nether"
+  - "world_the_end"
 
 SafeBlocks:
   Enabled: true
