@@ -9,7 +9,7 @@ Messages: #Formatting guide:
   Random: "<green>Sending you to <blue><i><x>, <y>, <z>"
   Bed: "<green>Sending you to your bed's spawn"
 ```
-Default plugin messages. The formatting of all messages on AsyncRTP was made possible using AdventureAPI. You can find formatting [here](https://docs.adventure.kyori.net/minimessage/).
+Default plugin messages. You can find formatting [here](https://docs.adventure.kyori.net/minimessage/).
 ```yml
 CommandRTP: #/wild
   Enabled: true
