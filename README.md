@@ -67,4 +67,4 @@ TeleportSound:
   Volume: 1 #0-10
   Pitch: 1 #0.5-2
 ```
-Sound the player and surrounding players will hear after teleporting to a new location (Does not occur on bed respawn) - A complete sound list can be found [here](https://www.digminecraft.com/lists/sound_list_pc.php).
+Sound the player and surrounding players will hear after teleporting to a new location (Does not occur on bed respawn). A complete sound list can be found [here](https://www.digminecraft.com/lists/sound_list_pc.php).
