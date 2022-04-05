@@ -5,13 +5,13 @@ If you find bugs, have suggestions, or need support, contact Zeke#5958 on discor
 
 ## Default configuration
 ```yml
-Messages: #Formatting guide: 
+Messages:
   Random: "<green>Sending you to <blue><i><x>, <y>, <z>"
   Bed: "<green>Sending you to your bed's spawn"
 ```
 Default plugin messages. You can find formatting [here](https://docs.adventure.kyori.net/minimessage/).
 ```yml
-CommandRTP: #/wild
+CommandRTP:
   Enabled: true
   Cooldown: 30 #Seconds (Set to 0 to disable)
   DisabledWorlds: #The command won't work in these worlds.
