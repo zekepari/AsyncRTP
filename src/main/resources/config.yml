@@ -49,5 +49,5 @@ SafeBlocks:
 TeleportSound:
   Enabled: true
   Sound: "ENTITY_EXPERIENCE_ORB_PICKUP" #Sounds list: https://www.digminecraft.com/lists/sound_list_pc.php
-  Volume: 1 #1-10 (Range of the sound)
-  Pitch: 1 #0.5-2 (Speed of the sound)
+  Volume: 1 #0-10
+  Pitch: 1 #0.5-2
