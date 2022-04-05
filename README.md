@@ -5,11 +5,11 @@ If you find bugs, have suggestions, or need support, contact Zeke#5958 on discor
 
 ## Default configuration
 ```yml
-Messages: #Formatting guide: https://docs.adventure.kyori.net/minimessage/
+Messages: #Formatting guide: 
   Random: "<green>Sending you to <blue><i><x>, <y>, <z>"
   Bed: "<green>Sending you to your bed's spawn"
 ```
-Default plugin messages.
+Default plugin messages. The formatting of all messages on AsyncRTP was made possible using AdventureAPI. You can find formatting [here](https://docs.adventure.kyori.net/minimessage/).
 ```yml
 CommandRTP: #/wild
   Enabled: true
@@ -67,4 +67,4 @@ TeleportSound:
   Volume: 1 #0-10
   Pitch: 1 #0.5-2
 ```
-Sound the player and surrounding players will hear after teleporting to a new location (Does not occur on bed respawn) - A complete sound list can be found [here](https://www.digminecraft.com/lists/sound_list_pc.php)
+Sound the player and surrounding players will hear after teleporting to a new location (Does not occur on bed respawn) - A complete sound list can be found [here](https://www.digminecraft.com/lists/sound_list_pc.php).
