@@ -3,7 +3,6 @@ package me.zekepari.asyncrtp;
 import me.zekepari.asyncrtp.Commands.Wild;
 import me.zekepari.asyncrtp.Events.PlayerJoin;
 import me.zekepari.asyncrtp.Events.PlayerRespawn;
-import me.zekepari.asyncrtp.Utilities.Teleporter;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.World;
@@ -23,11 +22,11 @@ public final class AsyncRTP extends JavaPlugin {
         // Plugin startup logic
         asyncRTP = this;
 
-        for (String world : getConfig().getStringList("DisabledWorlds")) {
+        for (String world : getConfig().getStringList("CommandRTP.DisabledWorlds")) {
             disabledWorlds.add(Bukkit.getWorld(world));
         }
 
-        for (String block : getConfig().getStringList("RandomTeleport.SafeBlocks")) {
+        for (String block : getConfig().getStringList("SafeBlocks.Blocks")) {
             safeBlocks.add(Material.matchMaterial(block));
         }
 
