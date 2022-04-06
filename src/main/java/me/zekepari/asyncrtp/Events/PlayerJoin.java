@@ -17,7 +17,7 @@ public class PlayerJoin implements Listener {
 
             if (player.hasPlayedBefore()) { return; }
 
-            Teleporter.issueRTP(player, Bukkit.getWorld(AsyncRTP.getAsyncRTP().getConfig().getString("NewPlayerRTP.RespawnWorld")));
+            Teleporter.createRTP(player, Bukkit.getWorld(AsyncRTP.getAsyncRTP().getConfig().getString("NewPlayerRTP.RespawnWorld")));
         }
     }
 }
