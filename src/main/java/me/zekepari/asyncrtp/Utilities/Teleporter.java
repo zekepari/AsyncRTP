@@ -1,13 +1,14 @@
 package me.zekepari.asyncrtp.Utilities;
 
 import me.zekepari.asyncrtp.AsyncRTP;
+import net.kyori.adventure.text.minimessage.tag.resolver.Placeholder;
+import net.kyori.adventure.text.minimessage.tag.resolver.TagResolver;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Sound;
 import org.bukkit.World;
 import org.bukkit.entity.Player;
 
-import java.util.HashMap;
 import java.util.Random;
 
 public class Teleporter {
@@ -26,10 +27,10 @@ public class Teleporter {
     }
 
     private static void issueTeleport(Player player, Location location) {
-        HashMap<String, String> placeholders = new HashMap<>();
-        placeholders.put("x", Integer.toString(location.getBlockX()));
-        placeholders.put("y", Integer.toString(location.getBlockY()));
-        placeholders.put("z", Integer.toString(location.getBlockZ()));
+        TagResolver.Single x = Placeholder.parsed("x", Integer.toString(location.getBlockX()));
+        TagResolver.Single y = Placeholder.parsed("y", Integer.toString(location.getBlockY()));
+        TagResolver.Single z = Placeholder.parsed("z", Integer.toString(location.getBlockZ()));
+        TagResolver placeholders = TagResolver.resolver(x, y, z);
         MessageService.sendMessage(player, AsyncRTP.getAsyncRTP().getConfig().getString("Messages.Random"), placeholders);
 
         if (AsyncRTP.getAsyncRTP().getConfig().getBoolean("TeleportSound.Enabled")) {
