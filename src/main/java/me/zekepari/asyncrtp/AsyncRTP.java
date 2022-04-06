@@ -1,12 +1,20 @@
 package me.zekepari.asyncrtp;
 
 import me.zekepari.asyncrtp.Commands.Wild;
+import me.zekepari.asyncrtp.Utilities.Teleporter;
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
+import org.bukkit.World;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import java.util.HashSet;
 
 public final class AsyncRTP extends JavaPlugin {
 
     private static AsyncRTP asyncRTP;
+
+    public static HashSet<Material> safeBlocks = new HashSet<>();
+    public static HashSet<World> disabledWorlds = new HashSet<>();
 
     @Override
     public void onEnable() {
@@ -14,7 +22,11 @@ public final class AsyncRTP extends JavaPlugin {
         asyncRTP = this;
 
         for (String world : getConfig().getStringList("DisabledWorlds")) {
-            Wild.disabledWorlds.add(Bukkit.getWorld(world));
+            disabledWorlds.add(Bukkit.getWorld(world));
+        }
+
+        for (String block : getConfig().getStringList("RandomTeleport.SafeBlocks")) {
+            safeBlocks.add(Material.matchMaterial(block));
         }
 
         getConfig().options().copyDefaults();

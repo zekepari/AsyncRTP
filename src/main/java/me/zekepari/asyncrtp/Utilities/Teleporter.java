@@ -14,6 +14,9 @@ public class Teleporter {
     public static HashSet<Material> safeBlocks = new HashSet<>();
 
     public static void issueRTP(Player player, World world) {
+        if (AsyncRTP.getAsyncRTP().getConfig().getBoolean("SafeBlocks.Enabled")) {
+
+        }
         CompletableFuture<Location> newLocation = new CompletableFuture<>();
 
         Bukkit.getScheduler().runTaskAsynchronously(AsyncRTP.getAsyncRTP(), new Runnable() {
