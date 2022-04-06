@@ -3,6 +3,9 @@ AsyncRTP is a Minecraft plugin designed for PaperMC servers which enables fast r
 
 If you find bugs, have suggestions, or need support, contact Zeke#5958 on discord.
 
+## Planned Features
+Towny, Factions and WorldGuard integration.
+
 ## Default configuration
 ```yml
 Messages:
