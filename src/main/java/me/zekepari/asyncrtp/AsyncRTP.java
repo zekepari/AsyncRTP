@@ -1,6 +1,8 @@
 package me.zekepari.asyncrtp;
 
 import me.zekepari.asyncrtp.Commands.Wild;
+import me.zekepari.asyncrtp.Events.PlayerJoin;
+import me.zekepari.asyncrtp.Events.PlayerRespawn;
 import me.zekepari.asyncrtp.Utilities.Teleporter;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -32,9 +34,12 @@ public final class AsyncRTP extends JavaPlugin {
         getConfig().options().copyDefaults();
         saveDefaultConfig();
 
-        if (getConfig().getBoolean("WildCommand.Enabled")) {
+        if (getConfig().getBoolean("CommandRTP.Enabled")) {
             getCommand("wild").setExecutor(new Wild());
         }
+
+        getServer().getPluginManager().registerEvents(new PlayerJoin(), this);
+        getServer().getPluginManager().registerEvents(new PlayerRespawn(), this);
     }
 
     @Override
