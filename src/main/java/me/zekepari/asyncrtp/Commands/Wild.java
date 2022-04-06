@@ -3,6 +3,8 @@ package me.zekepari.asyncrtp.Commands;
 import me.zekepari.asyncrtp.AsyncRTP;
 import me.zekepari.asyncrtp.Utilities.MessageService;
 import me.zekepari.asyncrtp.Utilities.Teleporter;
+import net.kyori.adventure.text.minimessage.tag.resolver.Placeholder;
+import net.kyori.adventure.text.minimessage.tag.resolver.TagResolver;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -27,7 +29,10 @@ public class Wild implements CommandExecutor {
             }
 
             if (onCooldown.containsKey(player)) {
-                MessageService.sendMessage(player, AsyncRTP.getAsyncRTP().getConfig().getString("CommandRTP.Messages.Cooldown"));
+                long timeElapsed = (onCooldown.get(player) + AsyncRTP.getAsyncRTP().getConfig().getInt("CommandRTP.Cooldown")) - Instant.now().getEpochSecond();
+                TagResolver.Single second = Placeholder.parsed("second", Long.toString(timeElapsed));
+                TagResolver placeholders = TagResolver.resolver(second);
+                MessageService.sendMessage(player, AsyncRTP.getAsyncRTP().getConfig().getString("CommandRTP.Messages.Cooldown"), placeholders);
                 return true;
             }
 
