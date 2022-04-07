@@ -34,6 +34,8 @@ public class Teleporter {
 
         MessageService.sendMessage(player, AsyncRTP.getAsyncRTP().getConfig().getString("Messages.Random"), placeholders);
 
+        player.teleportAsync(location);
+
         if (AsyncRTP.getAsyncRTP().getConfig().getBoolean("TeleportSound.Enabled")) {
             int Volume = AsyncRTP.getAsyncRTP().getConfig().getInt("TeleportSound.Volume");
             int Pitch = AsyncRTP.getAsyncRTP().getConfig().getInt("TeleportSound.Pitch");
@@ -41,7 +43,5 @@ public class Teleporter {
 
             player.playSound(location, Sound.valueOf(TeleportSound), Volume, Pitch);
         }
-
-        player.teleportAsync(location);
     }
 }
