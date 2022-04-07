@@ -1,6 +1,7 @@
 package me.zekepari.asyncrtp.Events;
 
 import me.zekepari.asyncrtp.AsyncRTP;
+import me.zekepari.asyncrtp.Utilities.MessageService;
 import me.zekepari.asyncrtp.Utilities.Teleporter;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -12,9 +13,14 @@ public class PlayerRespawn implements Listener {
 
     @EventHandler
     public void playerRespawnEvent(PlayerRespawnEvent event) {
-        if (AsyncRTP.getAsyncRTP().getConfig().getBoolean("RespawnRTP.Enabled")) {
-            Player player = event.getPlayer();
+        Player player = event.getPlayer();
 
+        if (AsyncRTP.getAsyncRTP().getConfig().getBoolean("RespawnRTP.CheckForBed")) {
+            MessageService.sendMessage(player, AsyncRTP.getAsyncRTP().getConfig().getString("Messages.Bed"));
+            return;
+        }
+
+        if (AsyncRTP.getAsyncRTP().getConfig().getBoolean("RespawnRTP.Enabled")) {
             if (AsyncRTP.getAsyncRTP().getConfig().getString("RespawnRTP.RespawnWorld").isEmpty()) {
                 Teleporter.createRTP(player, player.getWorld());
                 return;
