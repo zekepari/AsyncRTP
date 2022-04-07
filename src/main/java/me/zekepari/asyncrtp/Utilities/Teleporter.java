@@ -31,6 +31,7 @@ public class Teleporter {
         TagResolver.Single y = Placeholder.parsed("y", Integer.toString(location.getBlockY()));
         TagResolver.Single z = Placeholder.parsed("z", Integer.toString(location.getBlockZ()));
         TagResolver placeholders = TagResolver.resolver(x, y, z);
+
         MessageService.sendMessage(player, AsyncRTP.getAsyncRTP().getConfig().getString("Messages.Random"), placeholders);
 
         if (AsyncRTP.getAsyncRTP().getConfig().getBoolean("TeleportSound.Enabled")) {
