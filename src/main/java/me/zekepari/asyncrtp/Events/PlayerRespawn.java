@@ -15,18 +15,20 @@ public class PlayerRespawn implements Listener {
     public void playerRespawnEvent(PlayerRespawnEvent event) {
         Player player = event.getPlayer();
 
+        if (!AsyncRTP.getAsyncRTP().getConfig().getBoolean("RespawnRTP.Enabled")) {
+            return;
+        }
+
         if (AsyncRTP.getAsyncRTP().getConfig().getBoolean("RespawnRTP.CheckForBed")) {
             MessageService.sendMessage(player, AsyncRTP.getAsyncRTP().getConfig().getString("Messages.Bed"));
             return;
         }
 
-        if (AsyncRTP.getAsyncRTP().getConfig().getBoolean("RespawnRTP.Enabled")) {
-            if (AsyncRTP.getAsyncRTP().getConfig().getString("RespawnRTP.RespawnWorld").isEmpty()) {
-                Teleporter.createRTP(player, player.getWorld());
-                return;
-            }
-
-            Teleporter.createRTP(player, Bukkit.getWorld(AsyncRTP.getAsyncRTP().getConfig().getString("RespawnRTP.RespawnWorld")));
+        if (AsyncRTP.getAsyncRTP().getConfig().getString("RespawnRTP.RespawnWorld").isEmpty()) {
+            Teleporter.createRTP(player, player.getWorld());
+            return;
         }
+
+        Teleporter.createRTP(player, Bukkit.getWorld(AsyncRTP.getAsyncRTP().getConfig().getString("RespawnRTP.RespawnWorld")));
     }
 }
