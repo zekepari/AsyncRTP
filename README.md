@@ -1,4 +1,4 @@
-# AsyncRTP
+# AsyncRTP 1.18.2
 AsyncRTP is a Minecraft plugin designed for PaperMC servers which enables fast random teleporting around the world with various config options, such as asynchronous safe location finding.
 
 If you find bugs, have suggestions, or need support, contact Zeke#5958 on discord.
